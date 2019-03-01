@@ -25,12 +25,14 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     site_hash = {}
     
-    first_name = doc.css(".vitals-text-container").css("h1").text.split[0]
+
   
     
     counter = 0
     
     doc.css(".social-icon-container").css("a").each do |site|
+      first_name = doc.css(".vitals-text-container").css("h1").text.split[0]
+      
       url = doc.css(".social-icon-container").css("a")[counter]["href"]
       
       if url.include?("twitter")
