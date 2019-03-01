@@ -44,7 +44,6 @@ class Scraper
       elsif url.include?("#{first_name.downcase}") #blog 
         site_hash[:blog] = url 
       end 
-      binding.pry 
       counter += 1 
     end 
     
