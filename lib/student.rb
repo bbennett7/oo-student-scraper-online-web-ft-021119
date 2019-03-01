@@ -15,7 +15,7 @@ class Student
 
   def self.create_from_collection(students_array)
     students_array 
-    Scraper.each {|key, value| self.send(("#{key}="), value)}
+    Scraper.scrape_index_page.each {|key, value| self.send(("#{key}="), value)}
   end
 
   def add_student_attributes(attributes_hash)
