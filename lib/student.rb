@@ -23,7 +23,7 @@ class Student
     
   end
 
-  def name 
+  def self.name 
     @name 
   end 
 
