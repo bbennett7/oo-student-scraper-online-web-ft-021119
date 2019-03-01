@@ -25,9 +25,6 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     site_hash = {}
     
-
-  
-    
     counter = 0
     
     doc.css(".social-icon-container").css("a").each do |site|
@@ -55,16 +52,7 @@ class Scraper
       site_hash[:profile_quote] = doc.css(".profile-quote").text
     end 
     
-    #:bio -->
-    #:profile_quote --> doc.css(".profile-quote").text
-    
-    #:linkedin --> doc.css(".social-icon-container").css("a").first["href"]
-    #:bio --> doc.css(".bio-content").css("p").text
-    #:profile_quote --> 
-    
-
     site_hash
   end
-
 end
 
