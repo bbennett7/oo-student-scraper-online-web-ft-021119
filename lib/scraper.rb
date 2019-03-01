@@ -44,6 +44,7 @@ class Scraper
       elsif url.include?("#{first_name}") #blog 
         site_hash[:blog] = url 
       end 
+      binding.pry 
       counter += 1 
     end 
     
@@ -62,8 +63,7 @@ class Scraper
     #:bio --> doc.css(".bio-content").css("p").text
     #:profile_quote --> 
     
-    #{:linkedin => "", :github => "", :blog => "", :bio => ""}
-  binding.pry 
+
     site_hash
   end
 
