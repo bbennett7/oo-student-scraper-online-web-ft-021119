@@ -41,7 +41,7 @@ class Scraper
         site_hash[:linkedin] = url 
       elsif url.include?("github")
         site_hash[:github] = url 
-      elsif url.include?("#{first_name}") #blog 
+      elsif url.include?("#{first_name}.downcase") #blog 
         site_hash[:blog] = url 
       end 
       binding.pry 
