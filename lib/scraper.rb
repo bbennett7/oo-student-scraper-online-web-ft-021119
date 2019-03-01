@@ -52,7 +52,7 @@ class Scraper
       site_hash[:bio] = doc.css(".bio-content").css("p").text
     end 
     
-    if !doc.css(".profile-quote").text == nil 
+    if !doc.css(".profile-quote").text.empty? 
       site_hash[:profile_quote] = doc.css(".profile-quote").text
     end 
     
