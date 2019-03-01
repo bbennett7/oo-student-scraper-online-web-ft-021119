@@ -39,8 +39,8 @@ class Scraper
         site_hash[:linkedin] = url 
       elsif url.include?("github")
         site_hash[:github] = url 
-      #elsif url.include?("#{first_name}") #blog 
-      #  site_hash[:blog] = url 
+      elsif url.include?("#{first_name}") #blog 
+        site_hash[:blog] = url 
       end 
       counter += 1 
     end 
@@ -49,9 +49,9 @@ class Scraper
       site_hash[:bio] = doc.css(".bio-content").css("p").text
     end 
     
-  #  if !doc.css(".profile-quote").text == nil 
-  #    site_hash[:profile_quote] = doc.css(".profile-quote").text
-  #  end 
+    if !doc.css(".profile-quote").text == nil 
+      site_hash[:profile_quote] = doc.css(".profile-quote").text
+    end 
     
     #:bio -->
     #:profile_quote --> doc.css(".profile-quote").text
@@ -61,7 +61,7 @@ class Scraper
     #:profile_quote --> 
     
     #{:linkedin => "", :github => "", :blog => "", :bio => ""}
-
+  binding.pry 
     site_hash
   end
 
